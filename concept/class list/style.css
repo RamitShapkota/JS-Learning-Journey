@@ -1,0 +1,64 @@
+body{
+    font-family:Arial;
+    background-color: white;
+    color: black;
+    /* text-align: center; */
+}
+
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    width: 200px;
+
+}
+
+.error{
+    color: red;
+    font-size: 20px;
+}
+
+.success{
+    color: green;
+}
+
+.message{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.shake{
+    animation: shake 0.3s;
+}
+
+@keyframes shake{
+    0%{
+        transform: translatex(0);
+    }
+    25%{
+        transform:translateX(-5px);
+    }
+    50%{
+        transform: translateX(5px);
+    }
+    75%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+
+}
+
+#userinfo{
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+
