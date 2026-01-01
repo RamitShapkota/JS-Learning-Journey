@@ -1,7 +1,11 @@
-const API_KEY="682b7275bf4c8bd59bd8f029";
-const BASE_URL=" https://v6.exchangerate-api.com/v6/682b7275bf4c8bd59bd8f029/latest/USD"
+
+const BASE_URL="https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies"
 
 const dropdowns=document.querySelectorAll(".dropdown select");
+const btn=document.querySelector(".container button")
+const formCurr=document.querySelector(".from select");
+const toCurr=document.querySelector(".to select");
+const msg=document.querySelector(".message");
 
 // for(code in countryList)
 // {
@@ -32,3 +36,28 @@ const updateFlag=(element)=>{
     let img=element.parentElement.querySelector("img");
     img.src=newSrc;
 }
+
+btn.addEventListener("click",async(evt)=>{
+    evt.preventDefault();
+    let amount=document.querySelector(".amount input");
+    let amtVal=amount.value;
+    if(amtVal==="" || amtVal<1)
+    {
+        amtVal=1;
+        amount.value="1";
+    }
+    //create the final dynamic URL
+    const URL=`${BASE_URL}/${formCurr.value.toLowerCase()}.json`;
+    try{
+        let response=await fetch(URL);
+        let data=await response.json();
+
+        let rate=data[formCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
+
+        let finalAmount=(amount.value*rate).toFixed(2);
+        msg.innerText=`${amtVal}${formCurr.value} = ${finalAmount}${toCurr.value}`
+    }catch(error){
+        console.log("Fetch error:",error);
+
+    }
+})
