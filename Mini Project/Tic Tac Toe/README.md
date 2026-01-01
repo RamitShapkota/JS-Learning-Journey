@@ -10,7 +10,7 @@ A simple **Tic Tac Toe** game built with **pure JavaScript**, focusing on clean 
 - Real-time win & draw detection  
 - Reset & New Game functionality  
 
----
+C:\Users\us\Desktop\MERN\JavaScript\Mini Project\Currency Converter\assets\currency_converter.jpg---
 
 ### How to Play  
 1. Click on any empty box to place your mark (O starts first)  
