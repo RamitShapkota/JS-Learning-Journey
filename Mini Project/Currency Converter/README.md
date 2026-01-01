@@ -1,7 +1,7 @@
 # 🌍 Currency Converter App
 A sleek and responsive Currency Converter built with **Vanilla JavaScript** and **Fawaz Ahmed's Currency API**. This project demonstrates real-time data fetching, dynamic DOM manipulation, and professional UI design.
 
-![Project Screenshot](./assets/screenshot.png)
+![Project Screenshot](./assets/currency_converter.jpg)
 
 ## 🚀 Live Demo
 You can try the live application here: 
