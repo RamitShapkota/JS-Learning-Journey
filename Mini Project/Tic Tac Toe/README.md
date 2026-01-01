@@ -1,41 +1,77 @@
-# 🎯 Tic Tac Toe Game
+# 🕹️ Tic Tac Toe Game
 
-![Game Preview](./screenshot.jpg)
+A classic, interactive Tic Tac Toe game built with **Pure JavaScript**, focusing on clean game logic and smooth user experience.
 
----
 
-### What is this?  
-A simple **Tic Tac Toe** game built with **pure JavaScript**, focusing on clean game logic:  
-- Two-player turn-based gameplay (O & X)  
-- Real-time win & draw detection  
-- Reset & New Game functionality  
-
-### How to Play  
-1. Click on any empty box to place your mark (O starts first)  
-2. First to get 3 in a row (horizontal, vertical, diagonal) wins  
-3. If all boxes fill without a winner — it's a draw!  
-4. Use **Reset** or **New Game** buttons to restart  
-
----
-
-### Tech Stack  
-- **JavaScript**: Core game logic & interactivity  
-- HTML & CSS: Simple layout & styling  
-
----
-
-### Run Locally  
-1. Clone or download this repo  
-2. Open `index.html` in your browser  
-3. Play & enjoy!  
 
 ---
 
 
-### Author  
-👤 Ramit Shapkota  
-[GitHub](https://github.com/yourusername)  
+
+## 📸 Game Preview
+
+![Game Preview](./assets/tic%20tac%20toe....png)
+
+
 
 ---
 
-*Focused on JavaScript logic — styling kept minimal for clarity.*
+
+
+## 🚀 Live Demo
+
+You can play the game live here:  
+
+👉 **[Play Tic Tac Toe](https://ramitshapkota.github.io/JS-Learning-Journey/Mini%20Project/Tic%20Tac%20Toe/index.html)**
+
+
+
+---
+
+
+
+## 🧠 What is this?
+
+A simple yet robust two-player game that features:
+
+* **Real-time Win Detection:** Automatically identifies horizontal, vertical, and diagonal wins.
+
+* **Draw Logic:** Detects when all boxes are filled without a winner.
+
+* **Reset & New Game:** Instantly clear the board to start over.
+
+* **Turn Tracking:** Clearly shows which player (O or X) is currently moving.
+
+
+
+## 🛠️ Tech Stack
+
+* **JavaScript:** Core game logic and DOM manipulation.
+
+* **HTML5 & CSS3:** Clean layout and responsive grid styling.
+
+
+
+## 📖 What I Learned
+
+Through this project, I strengthened my understanding of:
+
+1. **Array Mapping:** Checking winning patterns against the current board state.
+
+2. **Event Delegation:** Handling clicks on the game grid efficiently.
+
+3. **UI/UX State:** Disabling the board once a winner is found to prevent further moves.
+
+
+
+---
+
+
+
+## 👤 Author
+
+**Ramit Shapkota** [GitHub Profile](https://github.com/RamitShapkota)
+
+
+
+*Focused on JavaScript Logic – styling kept minimal for clarity.*
