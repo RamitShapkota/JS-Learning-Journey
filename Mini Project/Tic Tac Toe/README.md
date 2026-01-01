@@ -1,6 +1,6 @@
 # 🎯 Tic Tac Toe Game
 
-![Game Preview](./screenshot.jpg)
+![Game Preview](./screenshot.jpg/)
 
 ---
 
