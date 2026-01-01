@@ -2,22 +2,12 @@
 
 A classic, interactive Tic Tac Toe game built with **Pure JavaScript**, focusing on clean game logic and smooth user experience.
 =======
-# 🎯 Tic Tac Toe Game
-![Game Preview](./assets/tic tac toe.jpg)
 
-
-
----
-
-
-
-## 📸 Game Preview
-
-![Game Preview](./assets/tic%20tac%20toe....png)
 
 
 
 ---
+
 
 
 
