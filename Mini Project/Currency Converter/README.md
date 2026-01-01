@@ -5,7 +5,7 @@ A sleek and responsive Currency Converter built with **Vanilla JavaScript** and 
 
 ## 🚀 Live Demo
 You can try the live application here: 
-👉 **[View Live Project](https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/)**
+👉 **[View Live Project](https://ramitshapkota.github.io/JS-Learning-Journey/)**
 
 ---
 
