@@ -37,8 +37,7 @@ const updateFlag=(element)=>{
     img.src=newSrc;
 }
 
-btn.addEventListener("click",async(evt)=>{
-    evt.preventDefault();
+const updateExchangeRate=async()=>{
     let amount=document.querySelector(".amount input");
     let amtVal=amount.value;
     if(amtVal==="" || amtVal<1)
@@ -54,10 +53,21 @@ btn.addEventListener("click",async(evt)=>{
 
         let rate=data[formCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
 
-        let finalAmount=(amount.value*rate).toFixed(2);
+        let finalAmount=(amtVal*rate).toFixed(2);
         msg.innerText=`${amtVal}${formCurr.value} = ${finalAmount}${toCurr.value}`
     }catch(error){
         console.log("Fetch error:",error);
 
     }
+};
+
+//this make the button work
+btn.addEventListener("click",(evt=>{
+    evt.preventDefault();
+    updateExchangeRate();
+}))
+
+//this makes it woek automatically on load
+window.addEventListener("load",()=>{
+    updateExchangeRate();
 })
