@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and setTimeinterval</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div id="connection-status">Live Feed: <span id="status-text" style="color: green;">ON</span></div>
+        <h2>TechStock (TSK)</h2>
+        <div class="price-box">$ <span id="price">150.00</span></div>
+
+        <div class="button-group">
+            <button onclick="buyStock()" class="buy-btn">Buy 1 Share</button>
+            <button onclick="stopFeed()" class="stop-btn">Stop Live Feed</button>
+        </div>
+
+        <div id="toast" class="hidden">
+            Order Placed!
+            <button onclick="cancelNotification()" class="undo-btn">Undo</button>
+        </div>
+        <ul class="hide">
+            <h2>Your Portfolio</h2>
+        </ul>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
