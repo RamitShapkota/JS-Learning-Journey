@@ -41,3 +41,10 @@ function showTask(){
 }
 
 showTask();
+
+inputBox.addEventListener("keydown", (e)=>{
+    if(e.key==="Enter"){
+        e.preventDefault();// Stops the page from refreshing
+        addTask();
+    }
+})
