@@ -1,7 +1,6 @@
 # 📝 To-Do List App
 A sleek and responsive To-Do List application built with **Vanilla JavaScript**. This project demonstrates efficient DOM manipulation, event delegation, and persistent data storage using the browser's Local Storage.
 
-> **Note:** [Add a screenshot or GIF of your To-Do List here!]
 
 ## 🚀 Live Demo
 You can try the live application here: 
