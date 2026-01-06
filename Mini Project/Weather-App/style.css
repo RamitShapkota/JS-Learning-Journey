@@ -101,3 +101,30 @@ body{
     color:#ff5e62;
     display: none;
 }
+
+@media (max-width:400px)
+{
+    .card{
+          padding: 40px 10px;
+    }
+
+    .search input{
+    color: #555;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.humidity,.wind{
+    font-size: 20px;
+}
+.details{
+    padding: 0 5px;
+}
+.weather-icon{
+    width: 150px;
+}
+.weather h2{
+    font-size: 40px;
+}
+}
