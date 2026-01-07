@@ -4,7 +4,7 @@ A sleek and interactive task management UI built with **Vanilla JavaScript**. Th
 
 ## 🚀 Live Demo
 You can try the live application here: 
-👉 **[View Live Project](https://ramitshapkota.github.io/JS-Learning-Journey/Mini%20Project/Drag-&-Drop/index.html)**
+👉 **[View Live Project](https://ramitshapkota.github.io/JS-Learning-Journey/Mini%20Project/Drag-%26-Drop/index.html)**
 
 ---
 
