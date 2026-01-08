@@ -3,21 +3,21 @@ let rightBox = document.querySelector("#right");
 let leftBox = document.querySelector("#left");
 
 for(let list of lists){
-    list.addEventListener("dragstart", (e)=>{
+    list.addEventListener("dragstart", (e)=>{//fires when the user STARTS dragging an element
         let selected = e.target;
         // e.dataTransfer.setData("dragged",e.target.id)
         // e.target.style.opacity = "0.5"
 
-        rightBox.addEventListener("dragover", (e)=>{
+        rightBox.addEventListener("dragover", (e)=>{//fires when the dragged element is OVER a valid drop area
             e.preventDefault();
             rightBox.style.background = "#1a1a3a";
         });
 
-        /*rightBox.addEventListener("dragleave", (e) => {
-          rightBox.style.background = "red"; // Reset color if the user moves away
+        /*leftBox.addEventListener("dragleave", (e) => {
+          leftBox.style.background = "#0b0421"; // Reset color if the user moves away
             });*/
       
-        rightBox.addEventListener("drop", (e)=>{
+        rightBox.addEventListener("drop", (e)=>{//fires when the element is RELEASED (dropped) on the target
             rightBox.appendChild(selected);
             rightBox.style.background =" #0b0421";
             // e.target.style.opacity = "1"
@@ -42,3 +42,19 @@ for(let list of lists){
 
     })
 }
+
+
+
+
+
+
+
+
+
+
+
+// dragstart → fires when the user STARTS dragging an element
+// drag      → fires CONTINUOUSLY while the element is being dragged
+// dragover  → fires when the dragged element is OVER a valid drop area
+// drop      → fires when the element is RELEASED (dropped) on the target
+// dragend   → fires when the dragging action FINISHES (after drop or cancel)
