@@ -36,8 +36,77 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     background:#fff;
-    padding: 2rem;
+    display: flex;
+    min-width:6rem;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+    padding:0;
     font-size: 2.6rem;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.input-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.input-group label{
+    flex-basis: 28%;  /*Sets the label's width to roughly 1/4 of the row.*/
+    user-select: none;
+}
+
+.input-group input, .input-group textarea{
+    flex-basis: 68%; /* Sets the input's width to the remaining space. */
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+::placeholder{
+    font-size: 1.4rem;
+    color: lightgray;
+}
+
+label::after{
+    content: "*";
+    color: red;
+}
+
+form button{
+    background: #141a34;
+    color:#fff;
+    border-radius:4px;
+    border: 1px solid rgba(255,255,255,0.7);
+    padding: 1rem 4rem;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    margin: 3rem auto 1rem;
+}
+
+.input-group span{
+    position: absolute;
+    right:1.7rem;
+    bottom: 1.2rem;
+    font-size: 1.4rem;
+    color: red;
+
+}
+
+#submit-error{
+    font-size: 1.4rem;
+    color: red;
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    /* display: none; */
 }
