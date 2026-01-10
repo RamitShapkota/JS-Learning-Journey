@@ -10,9 +10,9 @@ let submitError = document.querySelector("#submit-error");
 
 // --- Validation Functions ---
 function validateName() {
-    let name = document.querySelector("#contact-name").value;
+    let name = document.querySelector("#contact-name").value.trim();
 
-    if (name.length == 0) {
+    if (name.length === 0) {
         nameError.textContent = "Name is required";
         return false;
     }
@@ -27,20 +27,15 @@ function validateName() {
 }
 
 function validatePhone() {
-    let phone = document.querySelector("#contact-phone").value;
+    let phone = document.querySelector("#contact-phone").value.trim();
 
-    if (phone.length == 0) {
+    if (phone.length === 0) {
         phoneError.textContent = "Phone no is required";
         return false;
     }
 
-    if (phone.length !== 10) {
-        phoneError.textContent = "Phone no. should be 10 digits";
-        return false;
-    }
-
     if (!phone.match(/^[0-9]{10}$/)) {
-        phoneError.textContent = "Only digits please";
+        phoneError.textContent = "Phone no. should be 10 digits";
         return false;
     }
 
@@ -49,10 +44,10 @@ function validatePhone() {
 }
 
 function validateEmail() {
-    let email = document.querySelector("#contact-email").value;
+    let email = document.querySelector("#contact-email").value.trim();
 
-    if (email.length == 0) {
-        emailError.innerHTML = "Email is required";
+    if (email.length === 0) {
+        emailError.textContent = "Email is required";
         return false;
     }
 
@@ -66,7 +61,7 @@ function validateEmail() {
 }
 
 function validateMessage() {
-    let message = document.querySelector("#contact-message").value;
+    let message = document.querySelector("#contact-message").value.trim();
     const required = 30;
     const left = required - message.length;
 
@@ -79,9 +74,23 @@ function validateMessage() {
     return true;
 }
 
-// --- Form Submission Logic ---
+// --- Reset Form ---
+function resetForm() {
+    document.querySelector("#contact-name").value = "";
+    document.querySelector("#contact-phone").value = "";
+    document.querySelector("#contact-email").value = "";
+    document.querySelector("#contact-message").value = "";
+
+    nameError.innerHTML = "";
+    phoneError.innerHTML = "";
+    emailError.innerHTML = "";
+    messageError.innerHTML = "";
+
+    localStorage.removeItem("formData");
+}
+
+// --- Form Submit ---
 function validateForm() {
-    // 1. Check if all validations pass
     if (!validateName() || !validatePhone() || !validateEmail() || !validateMessage()) {
         submitError.style.display = "block";
         submitError.style.color = "red";
@@ -90,22 +99,20 @@ function validateForm() {
         setTimeout(() => {
             submitError.style.display = "none";
         }, 3000);
+
         return false;
     }
 
-    // 2. If valid, show status and call saveData
     submitError.style.display = "block";
     submitError.style.color = "blue";
     submitError.textContent = "Sending to Google Sheets...";
 
     saveData();
-
-    // 3. Return false to prevent page reload (allows fetch to complete)
     return false;
 }
 
+// --- Save Data ---
 function saveData() {
-    // 1. Capture current values
     let userInfo = {
         name: document.querySelector("#contact-name").value,
         phone: document.querySelector("#contact-phone").value,
@@ -113,34 +120,27 @@ function saveData() {
         message: document.querySelector("#contact-message").value
     };
 
-    // 2. Save to Local Storage (User's device)
     localStorage.setItem("formData", JSON.stringify(userInfo));
 
-    // 3. Send to Google Sheets (Your database)
     fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors', // Essential for Google Script
+        method: "POST",
+        mode: "no-cors",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(userInfo)
     })
-    .then(response => {
-        // Success feedback
-        submitError.style.color = "green";
-        submitError.textContent = "Successfully submitted!";
-        
-        // Clear success message and form checkmarks after 4 seconds
-        setTimeout(() => {
-            submitError.style.display = "none";
-            // Optional: reset the form after success
-            // document.querySelector("form").reset();
-        }, 4000);
-    })
-    .catch(error => {
-        // Error feedback
-        submitError.style.color = "red";
-        submitError.textContent = "Error! Connection failed.";
-        console.error('Submission Error:', error.message);
-    });
+        .then(() => {
+            submitError.style.color = "green";
+            submitError.textContent = "Successfully submitted!";
+
+            setTimeout(() => {
+                resetForm();
+                submitError.style.display = "none";
+            }, 2000);
+        })
+        .catch(() => {
+            submitError.style.color = "red";
+            submitError.textContent = "Error! Connection failed.";
+        });
 }
