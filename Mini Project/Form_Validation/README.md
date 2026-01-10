@@ -5,7 +5,7 @@ A high-performance, responsive contact form built with **Vanilla JavaScript**. T
 
 ## 🚀 Live Demo
 You can try the live application here: 
-👉 **[View Live Project](https://ramitshapkota.github.io/JS-Learning-Journey/Mini%20Project/Form_Validatin/index.html)**
+👉 **[View Live Project](https://ramitshapkota.github.io/JS-Learning-Journey/Mini%20Project/Form_Validation/index.html)**
 
 ---
 
