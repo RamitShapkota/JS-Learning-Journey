@@ -85,4 +85,16 @@ function validateForm(){
         }, 3000);
         return false;
     }
+    saveData();
+    return true;
+}
+
+function saveData(){
+    let userInfo={
+        name: document.querySelector("#contact-name").value,
+        phone: document.querySelector("#contact-phone").value,
+        email: document.querySelector("#contact-email").value,
+        message: document.querySelector("#contact-message").value
+    };
+    localStorage.setItem("formData",JSON.stringify(userInfo));
 }
