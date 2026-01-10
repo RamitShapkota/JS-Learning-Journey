@@ -107,3 +107,42 @@ form button{
     bottom: 1rem;
     /* display: none; */
 }
+
+@media (max-width: 500px) {
+    .input-group {
+        display: flex;
+        flex-direction: column; 
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    .input-group input, 
+    .input-group textarea {
+        width: 100%;
+        /* Remove extra padding since the icon is moving */
+        padding-right: 10px; 
+    }
+
+    /* Move the error/icon to the next line */
+    .input-group span {
+        position: static;      /* Removes the "floating" behavior */
+        display: block;        /* Forces it to a new line */
+        width: 100%;
+        text-align: right;     /* Keeps error text on the right side */
+        font-size: 12px;
+        margin-top: 5px;       /* Space between input and error */
+    }
+
+    /* If you are using Font Awesome checkmarks, they will now appear 
+       below the input instead of inside it */
+    .input-group span i {
+        top: 0; 
+        right: 0;
+    }
+}
